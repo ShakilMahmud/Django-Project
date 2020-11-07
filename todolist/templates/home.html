@@ -1,0 +1,43 @@
+<style>
+    h1{
+        color: aliceblue;
+        font-family: verdana;
+        font-size: 200%;
+        border: 1px solid powderblue;
+        background-color: rgb(55, 52, 63);
+        padding: 20px;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 50px;
+        border-radius: 30px;
+        padding-left: 400px;
+    }
+
+    h4{
+        background-color: aqua;
+        border-radius: 20px;
+        padding-left: 50px;
+        padding-bottom: 0px;
+        margin-right: 400px;
+    }
+</style>
+
+<h1>Welcome to Shakil's Todo List</h1>
+
+<form action="add/" method="POST" > {% csrf_token %}
+    <input type="text" placeholder="Enter your task..." name="todo" style="width: 300px;">
+    <input type="submit" value= "save" style="background-color: rgb(219, 163, 163);">
+</form>
+ <div>
+     
+    {% for data in data %}
+        <form action=" delete/{{data.id}}/" method="POST">
+            {% csrf_token %}
+            <h4>{{data.content}}</h4>
+            <input type="submit" value="delete" style="background-color: rgb(142, 187, 245);" >
+        </form>
+     
+    {% endfor %}
+ 
+ </div>
+ 

@@ -1,0 +1,9 @@
+<h1>This is the Todo page</h1>
+<ul>
+    <li> Todo list {{all}}</li>
+    <li> Todo list B </li>
+</ul>
+<form action="/todo/addtodo/" method="post">{% csrf_token %}
+    <input type="text" name="content"/>
+    <input type="submit" value="add"/>
+</form>

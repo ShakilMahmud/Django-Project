@@ -1,0 +1,12 @@
+<html>
+    <body bgcolor="e" style="color: aliceblue;">
+        <h2>ADD, if you can !</h2>
+        <form action="add" method="POST">
+            {% csrf_token%}
+            First Number  : <input type="text" name="first">
+            Second Number : <input type="text" name="second"><br>
+            <button>Add</button>
+        </form>
+
+    </body>
+</html>
